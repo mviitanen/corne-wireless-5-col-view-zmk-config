@@ -34,15 +34,15 @@
     };
 
     behaviors {
-        mt: mod_tap {
+        as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
             tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            display-name = "Mod-Tap";
         };
-
+        
         gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -56,14 +56,14 @@
         default_layer {
             display-name = "Default";
             bindings = <
-  &kp Q   &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I   &kp O   &kp P   &kp A   &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K   &kp L  &kp LALT   &kp Z   &kp X   &kp C   &kp V   &kp B   &kp N   &kp M  &kp COMMA  &kp DOT  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp SPACE  &kp RET   &mo 2  &kp LGUI
+  AS(Q)   AS(W)   AS(E)   AS(R)   AS(T)   AS(Y)   AS(U)   AS(I)   AS(O)   AS(P)   AS(A)   AS(S)   AS(D)   AS(F)   AS(G)   AS(H)   AS(J)   AS(K)   AS(L)  &kp LALT   AS(Z)   AS(X)   AS(C)   AS(V)   AS(B)   AS(N)   AS(M)  AS(COMMA)  AS(DOT)  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp SPACE  &kp RET   &mo 2  &kp LGUI
             >;
         };
 
         layer_lower {
             display-name = "Lower";
             bindings = <
- &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp ESCAPE  &kp LG(A)  &kp LG(S)  &trans  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp LALT  &kp GRAVE  &kp LG(Z)  &kp LG(C)  &kp LG(X)  &kp LG(V)  &trans  &kp SEMI  &kp SINGLE_QUOTE  &kp SLASH  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp SPACE  &kp RET   &mo 2  &kp LGUI
+ AS(NUMBER_1)  AS(NUMBER_2)  AS(NUMBER_3)  AS(NUMBER_4)  AS(NUMBER_5)  AS(NUMBER_6)  AS(NUMBER_7)  AS(NUMBER_8)  AS(NUMBER_9)  AS(NUMBER_0)  &kp ESCAPE  &kp LG(A)  &kp LG(S)  &trans  &trans  &trans  AS(LEFT_BRACKET)  AS(RIGHT_BRACKET)  AS(BACKSLASH)  &kp LALT  AS(GRAVE)  &kp LG(Z)  &kp LG(C)  &kp LG(X)  &kp LG(V)  &trans  AS(SEMI)  AS(SINGLE_QUOTE)  AS(SLASH)  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp SPACE  &kp RET   &mo 2  &kp LGUI
             >;
         };
 
