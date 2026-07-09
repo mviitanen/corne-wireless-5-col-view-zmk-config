@@ -49,6 +49,14 @@
             bindings = <&kp ESC>, <&kp TILDE>;
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
+
+        spc_tab: space_tab {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -56,21 +64,21 @@
         default_layer {
             display-name = "Default";
             bindings = <
-  AS(Q)   AS(W)   AS(E)   AS(R)   AS(T)   AS(Y)   AS(U)   AS(I)   AS(O)   AS(P)   AS(A)   AS(S)   AS(D)   AS(F)   AS(G)   AS(H)   AS(J)   AS(K)   AS(L)  &kp LALT   AS(Z)   AS(X)   AS(C)   AS(V)   AS(B)   AS(N)   AS(M)  AS(COMMA)  AS(DOT)  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp SPACE  &kp RET   &mo 2  &kp LGUI
+  AS(Q)   AS(W)   AS(E)   AS(R)   AS(T)   AS(Y)   AS(U)   AS(I)   AS(O)   AS(P)   AS(A)   AS(S)   AS(D)   AS(F)   AS(G)   AS(H)   AS(J)   AS(K)   AS(L)  &kp LALT   AS(Z)   AS(X)   AS(C)   AS(V)   AS(B)   AS(N)   AS(M)  AS(COMMA)  AS(DOT)  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &spc_tab TAB SPACE  &kp RET   &mo 2  &kp LGUI
             >;
         };
 
         layer_lower {
             display-name = "Lower";
             bindings = <
- AS(NUMBER_1)  AS(NUMBER_2)  AS(NUMBER_3)  AS(NUMBER_4)  AS(NUMBER_5)  AS(NUMBER_6)  AS(NUMBER_7)  AS(NUMBER_8)  AS(NUMBER_9)  AS(NUMBER_0)  &kp ESCAPE  &kp LG(A)  &kp LG(S)  &trans  &trans  &trans  AS(LEFT_BRACKET)  AS(RIGHT_BRACKET)  AS(BACKSLASH)  &kp LALT  AS(GRAVE)  &kp LG(Z)  &kp LG(C)  &kp LG(X)  &kp LG(V)  &trans  AS(SEMI)  AS(SINGLE_QUOTE)  AS(SLASH)  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp SPACE  &kp RET   &mo 2  &kp LGUI
+ AS(NUMBER_1)  AS(NUMBER_2)  AS(NUMBER_3)  AS(NUMBER_4)  AS(NUMBER_5)  AS(NUMBER_6)  AS(NUMBER_7)  AS(NUMBER_8)  AS(NUMBER_9)  AS(NUMBER_0)  &kp ESCAPE  &kp LG(A)  &kp LG(S)  &trans  &trans  AS(MINUS)  AS(LEFT_BRACKET)  AS(RIGHT_BRACKET)  AS(BACKSLASH)  &kp LALT  AS(GRAVE)  &kp LG(Z)  &kp LG(C)  &kp LG(X)  &kp LG(V)  AS(EQUAL)  AS(SEMI)  AS(SINGLE_QUOTE)  AS(SLASH)  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp DELETE  &kp BSPC   &mo 2  &kp LGUI
             >;
         };
 
         layer_raise {
             display-name = "Raise";
             bindings = <
- &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp TAB  &kp F11  &kp F12  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp LALT  &kp CAPSLOCK     &trans  &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp SPACE  &kp RET   &mo 2  &kp LGUI
+ &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp TAB  &kp F11  &kp F12  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp LALT  &kp CAPSLOCK     &trans  &kp K_MUTE  &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END  &kp LCTRL  &kp LEFT_SHIFT   &mo 1  &kp INSERT  &kp RET   &mo 2  &kp LGUI
             >;
         };
 
